@@ -1,6 +1,6 @@
 # 事前準備
 
-このワークショップは、Visual Studio を利用して Azure Functions をベースとした API の開発です。
+このワークショップでは、Azure Functions を使って API の開発を行います。言語は C# を使います。
 
 ワークショップを開始する前に準備は以下となります。
 
