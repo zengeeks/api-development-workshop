@@ -31,3 +31,7 @@ REST API をコールする際にクライアントとして Postman を使い�
 ## Azure サブスクリプションの用意
 
 Azure Functions を利用しますので、Azure Functions のリソースが作成可能なサブスクリプションをご用意ください。
+
+まだ Microsoft Azure のサブスクリプションをお持ちでない方は、下記を参考にご用意ください。
+
+- [パターンD: Microsoft Azure を利用するワークショップ - zengeeks/preparation-check: 環境チェック用リポジトリ](https://github.com/zengeeks/preparation-check#パターンd-microsoft-azure-を利用するワークショップ)
