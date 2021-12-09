@@ -10,12 +10,12 @@ API の開発の基礎について学ぶるハンズオンの資料です。
 
 ## ハンズオンの流れ
 
-以下の構成で API開発について学ぶことができます。
+以下の構成で API開発について学びます。
 
-- API を使ってみる
+- [API を使ってみる](./call-apis.md)
   - REST クライアントの使い方
   - GET リクエストを行う
   - POST リクエストを行う
-- OpenAPI について知る
-- コンソールアプリで HTTP クライアントを作成する
+- [OpenAPI について知る](./learn-openapi.md)
+- [コンソールアプリで HTTP クライアントを作成する](./create-first-http-client.md)
 - Azure Functions で API を作成し、公開する
