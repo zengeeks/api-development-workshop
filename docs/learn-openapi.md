@@ -26,3 +26,9 @@ Swagger UI では、OpenAPI で記述されたリクエストを視覚的に確�
 
 ```
 ```
+
+[戻る](./call-apis.md) | [次へ]()
+
+----
+
+[目次へ戻る](./selfpaced-handson.md)
