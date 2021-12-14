@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Net;
 
 namespace ItemApi;
+
 public class ItemOperations
 {
     private static readonly List<Item> Items;
@@ -127,7 +127,6 @@ public class ItemOperations
         if (category == null)
         {
             return new BadRequestObjectResult("Query string で category を指定してください。");
-
         }
         var items = Items.Where(x => x.Category == category).ToList();
         if (!items.Any())
@@ -164,5 +163,5 @@ public class ItemOperations
         };
     }
 
-    #endregion Demo 用
+    #endregion Demo 用 APIs
 }
