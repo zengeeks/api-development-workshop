@@ -1,5 +1,7 @@
 # OpenAPI について知る
 
+## おおまかな流れ
+
 - [OpenAPI の要点をおさらい](#openapi-の要点をおさらい)
 - [Swagger UI の紹介](#swagger-ui-の紹介)
 - [Swagger UI を使ってみる](#swagger-ui-を使ってみる)
@@ -155,7 +157,7 @@ components:
 | `Components` を活用する | 同じ構造の定義は、`Components` の配下にまとめて `$ref: '#/components/~~'` で参照することで、構造の重複を防ぐことができ、設計の最適化ができ、ドキュメントのメンテナンス性の向上にもつながります。|
 | Swagger UI を使ってリクエストを行うときは CORS の制限に注意する | Swagger UI はブラウザベースのツールなので、実行する先の API の CORS が許可されている必要があります。配置する場所や API の CORS の設定にご留意ください。 |
 
-[戻る](./call-apis.md) | [次へ]()
+[戻る](./call-apis.md) | [次へ](./create-first-http-client.md)
 
 ----
 

@@ -1,5 +1,7 @@
 # API を使ってみる
 
+## 大まかな流れ
+
 - [API の要点をおさらい](#api-の要点をおさらい)
 - [REST クライアントの使い方](#rest-クライアントの使い方)
 - [GET リクエストを行う](#get-リクエストを行う)
@@ -26,18 +28,42 @@ API (Application Programming Interface) で抑えるべきポイントをおさ�
 | MIME タイプ | _Multipurpose Internet Mail Extensions_. HTTP リクエストやレスポンスの形式を示す。よく利用される MIME タイプ: `text/html`, `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data` など |
 | `Content-Type` | HTTP リクエストにおいて、MIME タイプを示すために利用されるヘッダーの一つ。 |
 
-HTTP の基本については、下記が参考になります。
+HTTP の基本に関する情報は、下記が参考になります。
 
 - [HTTP の基本 - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP)
-- [Uniform Resource Identifiers (URI) の構文 - ウェブ上のリソースの識別 - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#syntax_of_uniform_resource_identifiers_uris)
+- [HTTP の概要 - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
+- [ウェブ上のリソースの識別 - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web)
+- [HTTP メッセージ - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Messages)
+- [MIME タイプ (IANA メディアタイプ) - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/MIME_Types)
+- [HTTP レスポンスステータスコード - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Status)
 
 ### RESTful API
 
-TODO: 軽く紹介する
+_Representational State Transfer (REST)_ は、Web における API を実装する際のアーキテクチャスタイルのひとつ。下記にあげられるような原則のもと、多くのプラットフォーム、サービスで採用されている。
+
+- "リソース" を中心とした設計
+- リソースを識別できる
+- ステートレスな要求モデル
+- ハイパーメディア リンクによって動作する
+
+このドキュメントが参考になります。
+
+- [Web API 設計のベスト プラクティス - Azure Architecture Center | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/architecture/best-practices/api-design)
 
 ### CRUD
 
-TODO: 軽く紹介する
+[CRUD - Wikipedia](https://ja.wikipedia.org/wiki/CRUD) にはこのように紹介されています。
+
+> CRUD（クラッド）とは、ほとんど全てのコンピュータソフトウェアが持つ永続性[1]の4つの基本機能のイニシャルを並べた用語。
+
+| 項目 | 操作 |
+|----|---|
+| Create | 生成 |
+| Read | 読み取り |
+| Update | 更新 |
+| Delete | 削除 |
+
+API ではこの CRUD に沿って操作を作成することも多いです。
 
 ## REST クライアントの使い方
 
@@ -94,14 +120,14 @@ GET メソッドは、一般にデータを取得するときに利用します�
 | 項目 | 説明 |
 |----|----|
 | メソッド | `GET` |
-| URL | `https://example.com/items` |
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items` |
 
 つぎに、クエリを付与したリクエストを送信してみましょう。
 
 | 項目 | 説明 |
 |----|----|
 | メソッド | `GET` |
-| URL | `https://example.com/items?category=kitchen` |
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-query?id=1` |
 
 このように、検索条件など秘匿する必要がない入力値はクエリとして指定することが多いです。
 
@@ -118,9 +144,9 @@ POST メソッドによるリクエストは、一般的にクライアントか
 | 項目 | 説明 |
 |----|----|
 | メソッド | `POST` |
-| URL | `https://example.com/items` |
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-form` |
 | ヘッダー | `Content-Type`: `application/x-www-form-urlencoded` |
-| 送信するデータ |  |
+| 送信するデータ | `name`: <任意の文字列>, `description`: <任意の文字列> |
 
 これは、HTML から POST メソッドのリクエストを送る際に利用される `<form>` タグを利用したリクエストを想定した例です。`<form>` タグを利用する場合、リクエストのMIMEタイプには `application/x-www-form-urlencoded` が指定されます。（なお、`<form>` の MIMEタイプは、`enctype` 属性で他の MINEタイプに変更することが可能です。）
 
@@ -129,9 +155,9 @@ POST メソッドによるリクエストは、一般的にクライアントか
 | 項目 | 説明 |
 |----|----|
 | メソッド | `POST` |
-| URL | `https://example.com/items` |
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items` |
 | ヘッダー | `Content-Type`: `application/json` |
-| Request body | `{}` |
+| Request body | `{"name": "<任意の文字列>", "description": "<任意の文字列>"}` |
 
 このほか、`PUT`, `DELETE` などのメソッドがありますが、ここでは割愛し、次の学習に進みます。
 
