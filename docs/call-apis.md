@@ -15,16 +15,16 @@ API (Application Programming Interface) で抑えるべきポイントをおさ�
 
 | ポイント | 説明 |
 |----|----|
-| HTTP リクエスト | |
-| HTTP レスポンス | |
+| HTTP リクエスト | HTTP プロトコルに則り送信するリクエスト。URL が示すリソースに対して、メソッドの指定や、クエリ、リクエストボディなどを用いて処理条件を渡すことで、処理結果を得ることができる。 |
+| HTTP レスポンス | HTTP リクエストに対する応答。HTTP ステータスや本文によって処理結果が返却される。本文の形式は、リクエストの `Accept` によって選択されるのが一般的。 |
 | URL | ウェブ上のリソースを識別してアクセスするための、プロトコルやドメイン、ポート、そしてパスを含む文字列。 |
-| HTTP メソッド | |
-| クエリ |  |
-| フラグメント | |
-| リクエストボディ | |
-| ヘッダー | |
-| MIME タイプ | |
-| Content-Type | |
+| HTTP メソッド | HTTP リクエストにおけるメソッド。`GET`, `POST`, `PUT`, `DELETE` などが利用される。 |
+| クエリ | HTTP リクエストにおいて、URL の末尾に付与する形式で渡す処理条件のひとつ。URLの末尾に `?` で連結し、キーと値の組合せを渡すことができる。例: `?key1=value1&key2=value2` |
+| フラグメント | リソース自体の別の場所を示すアンカー。例: `#SomewhereInTheDocument` |
+| ヘッダー | HTTP リクエストにおいて、処理条件を渡す形式の一つ。 よく使われるヘッダー: `Content-Type`, `Authorization`, `Accept` など |
+| リクエストボディ | HTTP リクエストにおいて、処理条件を渡す形式の一つ。API では、ヘッダーに `Content-Type: applicaiton/json` を指定しておき、リクエストボディを JSON の形式で渡すことが多い。 |
+| MIME タイプ | _Multipurpose Internet Mail Extensions_. HTTP リクエストやレスポンスの形式を示す。よく利用される MIME タイプ: `text/html`, `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data` など |
+| `Content-Type` | HTTP リクエストにおいて、MIME タイプを示すために利用されるヘッダーの一つ。 |
 
 HTTP の基本については、下記が参考になります。
 
