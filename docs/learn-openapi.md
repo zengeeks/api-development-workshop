@@ -102,6 +102,8 @@ OpenAPI をどう記述していくかも確認してみましょう。
 
 ここでは、[SwaggerHub](https://app.swaggerhub.com/) を利用してデモを行います。もし一緒に体験したい方は、[こちら](https://try.smartbear.com/)から SwaggerHub のアカウントを作成しご利用ください。
 
+#### `paths` や `components` を記述する
+
 下記の定義を記述していきます。
 
 ```yml
@@ -151,6 +153,32 @@ components:
 ```
 
 ![SwaggerHub による Swagger UI の記述デモ](./images/swaggerhub_swagger-ui_demo.png)
+
+#### 認証を記述する
+
+APIは認証も大事なポイントです。OpenAPI では、主要な認証方式も記述することができます。
+
+```yml
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: api_key
+      in: header
+    BearerAuth:
+      type: http
+      schema: bearer
+
+security: 
+  - ApiKeyAuth: []
+  - BearerAuth:
+    - scope1
+    - scope2
+```
+
+OpenAPI の認証に関する定義については、下記が参考になります。
+
+- [Authentication - Swagger](https://swagger.io/docs/specification/authentication/)
 
 このように、OpenAPI は、エディタを含め Swagger UI と組み合わせると非常に便利に記述、運用していくことができます。
 
