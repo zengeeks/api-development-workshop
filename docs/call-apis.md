@@ -113,21 +113,35 @@ Workspaces のプルダウンを開き、「Create Workspace」ボタンを選�
 
 まず手始めに、一番シンプルな GET メソッドのリクエストを送信してみましょう。
 
-GET メソッドは、一般にデータを取得するときに利用します。RESTful API 
+GET メソッドは、一般にデータを取得するときに利用します。
 
 それでは、REST クライアントに、URL とメソッドを指定して送信します。
 
 | 項目 | 説明 |
 |----|----|
+| 名前 | 例: `シンプルな GET リクエスト` |
 | メソッド | `GET` |
 | URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items` |
+
+レスポンスが更新され、アイテムの一覧を JSON の形式で取得できることを確認できたと思います。
 
 つぎに、クエリを付与したリクエストを送信してみましょう。
 
 | 項目 | 説明 |
 |----|----|
+| 名前 | 例: `クエリ付き GET リクエスト` |
 | メソッド | `GET` |
-| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-query?id=1` |
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-query?category=bag` |
+
+`category` が `bag` のアイテムの一覧が取得されることを確認できました。
+
+クエリの値を変更してみましょう。
+
+| 項目 | 説明 |
+|----|----|
+| URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-query?category=hat` |
+
+つぎは `category` が `hat` のアイテム一覧が取得されることも確認できました。
 
 このように、検索条件など秘匿する必要がない入力値はクエリとして指定することが多いです。
 
@@ -137,16 +151,17 @@ GET メソッドは、一般にデータを取得するときに利用します�
 
 つぎに、POST メソッドのリクエストを送信してみましょう。
 
-POST メソッドによるリクエストは、一般的にクライアントからサーバーにデータを渡す場合に利用されます。
+POST メソッドによるリクエストは、一般的にクライアントからサーバーにデータを渡し、何らかの処理をさせる場合に利用されます。
 
 試しに、POST メソッドのリクエストを、REST クライアントから送信してみましょう。
 
 | 項目 | 説明 |
 |----|----|
+| 名前 | 例: `フォームによる POST リクエスト` |
 | メソッド | `POST` |
 | URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items-form` |
 | ヘッダー | `Content-Type`: `application/x-www-form-urlencoded` |
-| 送信するデータ | `name`: <任意の文字列>, `description`: <任意の文字列> |
+| 送信するデータ | `name`: <任意の文字列>, `category`: <任意の文字列> `description`: <任意の文字列> |
 
 これは、HTML から POST メソッドのリクエストを送る際に利用される `<form>` タグを利用したリクエストを想定した例です。`<form>` タグを利用する場合、リクエストのMIMEタイプには `application/x-www-form-urlencoded` が指定されます。（なお、`<form>` の MIMEタイプは、`enctype` 属性で他の MINEタイプに変更することが可能です。）
 
@@ -154,10 +169,11 @@ POST メソッドによるリクエストは、一般的にクライアントか
 
 | 項目 | 説明 |
 |----|----|
+| 名前 | 例: `JSON データによる POST リクエスト` |
 | メソッド | `POST` |
 | URL | `https://func-apidevworkshop-zen.azurewebsites.net/api/items` |
 | ヘッダー | `Content-Type`: `application/json` |
-| Request body | `{"name": "<任意の文字列>", "description": "<任意の文字列>"}` |
+| Request body | `{"name": "<任意の文字列>", "category": "<任意の文字列>", "description": "<任意の文字列>"}` |
 
 このほか、`PUT`, `DELETE` などのメソッドがありますが、ここでは割愛し、次の学習に進みます。
 

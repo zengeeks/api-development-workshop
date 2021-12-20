@@ -94,7 +94,7 @@ Swagger UI を利用するには、Swagger や有志による様々な方法が�
 
 Swagger UI: https://func-apidevworkshop-zen.azurewebsites.net/api/swagger/ui
 
-JSON や YAML よりも断然見やすく、Swagger UI 上でリクエストを送信することもできるので、非常に便利になります。
+このように Swagger UI を利用すると、JSON や YAML よりも断然見やすく、Swagger UI 上でリクエストを送信することもできるので、非常に便利になります。
 
 ### OpenAPI で API仕様を記述してみる（デモ）
 
@@ -150,12 +150,22 @@ components:
           type: number
 ```
 
+![SwaggerHub による Swagger UI の記述デモ](./images/swaggerhub_swagger-ui_demo.png)
+
+このように、OpenAPI は、エディタを含め Swagger UI と組み合わせると非常に便利に記述、運用していくことができます。
+
 ### 実際に記述する際のポイント
+
+OpenAPI の定義を運用していくにあたり、役立つポイントをいくつかご紹介します。
 
 | ポイント | 説明 |
 |----|----|
-| `Components` を活用する | 同じ構造の定義は、`Components` の配下にまとめて `$ref: '#/components/~~'` で参照することで、構造の重複を防ぐことができ、設計の最適化ができ、ドキュメントのメンテナンス性の向上にもつながります。|
+| コードと同様に履歴管理を行う | OpenAPI を定義したファイルは、コードと同じように Git 等を用いてバージョン管理するとをお勧めします。コードの変更とともに、OpenAPI 定義も更新していくことで、ドキュメントの陳腐化を防ぎ、チームで効率の良い開発を続けることができます。 |
+| `Components` を活用する | OpenAPI の記述で同じ構造の定義は、`Components` の配下にまとめて `$ref: '#/components/~~'` で参照することで、構造の重複を防ぐことができます。これにより、設計の最適化ができ、ドキュメントのメンテナンス性の向上にもつながります。|
 | Swagger UI を使ってリクエストを行うときは CORS の制限に注意する | Swagger UI はブラウザベースのツールなので、実行する先の API の CORS が許可されている必要があります。配置する場所や API の CORS の設定にご留意ください。 |
+| サーバーやクライアントの自動生成ツールもある | [OpenAPI Generator](https://openapi-generator.tech/) のように、OpenAPI の定義からサーバー実装の土台であったり、API実行用のクライアントのコードベースを生成することができるツールがあります。 |
+
+それでは、次は実際にコードに触れて理解を深めていきましょう。
 
 [戻る](./call-apis.md) | [次へ](./create-first-http-client.md)
 
