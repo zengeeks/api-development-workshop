@@ -185,7 +185,7 @@ TODO: サンプルコードのリンクを更新
 
 <br>
 
-[**次へ: 実践的な POST / PUT / DELETE メソッドの作成**](./create-methods.md)
+[戻る](./create-function-app-with-open-api.md) | [**次へ: 実践的な POST / PUT / DELETE メソッドの作成**](./create-methods.md)
 
 ----
 

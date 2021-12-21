@@ -144,7 +144,7 @@ public class OpenApiConfigurationOptions : DefaultOpenApiConfigurationOptions
 
 <br>
 
-[**次へ: 実践的な GET メソッドの作成**](./create-get-methods.md)
+[戻る](./create-function-app.md) | [**次へ: 実践的な GET メソッドの作成**](./create-get-methods.md)
 
 ----
 

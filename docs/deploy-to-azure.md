@@ -150,7 +150,7 @@ Function App の CORS の設定は、Azure ポータルで Function App のリ�
 
 <br>
 
-[**次へ: Azure Storage へファイルを保存する API の作成**](./create-function-app-with-blob-output-binding.md)
+[戻る](./create-methods.md) | [**次へ: Azure Storage へファイルを保存する API の作成**](./create-function-app-with-blob-output-binding.md)
 
 ----
 

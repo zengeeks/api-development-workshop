@@ -323,7 +323,7 @@ Function App の Swagge UI の URL が不明な場合は、 以下を参考に�
 
 <br>
 
-[**次へ: Azure のリソース削除**](./delete-azure-resources.md)
+[戻る](./deploy-to-azure.md) | [**次へ: Azure のリソース削除**](./delete-azure-resources.md)
 
 ----
 

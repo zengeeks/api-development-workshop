@@ -129,7 +129,7 @@ public static class Function1
 
 <br>
 
-[**次へ: Open API を適用した Azure Functions の開発**](./create-function-app-with-open-api.md)
+[戻る](create-first-http-client.md) | [**次へ: Open API を適用した Azure Functions の開発**](./create-function-app-with-open-api.md)
 
 ----
 

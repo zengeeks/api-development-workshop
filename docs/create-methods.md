@@ -170,7 +170,7 @@ API の主な仕様は以下とします。
 
 <br>
 
-[**次へ: Azure へのデプロイ**](./deploy-to-azure.md)
+[戻る](./create-get-methods.md) | [**次へ: Azure へのデプロイ**](./deploy-to-azure.md)
 
 ----
 
