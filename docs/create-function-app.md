@@ -114,9 +114,9 @@ public static class Function1
 
 <br>
 
-## まとめ
+## 🎉 Congratulations 🎉
 
-ここでは以下のことを学びました。
+ここでは以下のことを習得しました。
 
 - ✅ **REST API の作成**
   - Visual Studio で Http Trigger の Function App の作成方法
@@ -125,11 +125,11 @@ public static class Function1
 - ✅ **ローカルデバッグ**
   - デバッグ実行の方法と、ブレークポイントをおいてステップ実行する方法
 
-次のチャプター以降で、Open API の定義を有効した API の作成、そしてより実戦的な GET/POST/PUT/DELETE の API を作成していきます。
+次のチャプター以降で、Open API を適用した API の作成、そしてより実戦的な GET/POST/PUT/DELETE の API を作成していきます。
 
 <br>
 
-[**次へ: Open API が有効な Azure Functions の開発**](./create-function-app-with-open-api.md)
+[**次へ: Open API を適用した Azure Functions の開発**](./create-function-app-with-open-api.md)
 
 ----
 
