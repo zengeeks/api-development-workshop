@@ -52,7 +52,7 @@ Azure Functions (C#) をクリックします。見つからない場合は、�
 
 `http://localhost:7071/api/swagger.json` や `http://localhost:7071/api/swagger.yaml` にアクセスすることで定義を直接みることが可能です。
 
-このあとのワークショップでは、UI を構成するコードの解説と、Open API の Metadata のカスタマイズをしていきます。
+次は、UI を構成するコードの解説と、Open API の Metadata のカスタマイズをしていきます。
 
 <br>
 
@@ -91,7 +91,7 @@ SDK で専用の class が用意されているのでそれを使ってカスタ
 
 ![2-3](./images/create-function-app-with-open-api_2-3.png)
 
-class の内容を以下のコードに書き換えます。
+OpenApiConfigurationOptions class のコード全体を以下に書き換えます。
 
 ```csharp
 using System;
@@ -140,7 +140,7 @@ public class OpenApiConfigurationOptions : DefaultOpenApiConfigurationOptions
   - Open API を定義する Attribute の構成
   - Open API の Metadata のカスタマイズ方法
 
-次のチャプター以降では、実戦的な内容として、GET / POST / PUT / DELETE の API の開発とメソッドに合わせた Open API の定義方法を学びます。
+次のチャプター以降では、実戦的な内容として GET / POST / PUT / DELETE の API の開発とメソッドに合わせた Open API の定義方法を学びます。
 
 <br>
 

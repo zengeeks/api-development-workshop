@@ -22,9 +22,9 @@ Azure Functions (C#) のテンプレートを選択し、右下の **次へ** �
 
 以下を参考に入力し、**作成**ボタンをクリックします。
 
-- プロジェクト名: `FirstFunctionApp`
-- 場所: 任意の場所を選択
-- ソリューション名: `ApiDeWorkshop`
+- **プロジェクト名**: `FirstFunctionApp`
+- **場所**: 任意の場所を選択
+- **ソリューション名**: `ApiDeWorkshop`
 
 ![1-3](./images/create-function-app_1-3.png)
 

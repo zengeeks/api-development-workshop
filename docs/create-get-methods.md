@@ -24,7 +24,7 @@
 
 作成した **Models** フォルダーを右クリックし class を追加しましょう。
 
-1つ目は `ItemToAdd` という名前で class を追加します。コードは以下にします。
+1つ目は `ItemToAdd` という名前で class を追加します。コード全体を以下に書き換えます。
 
 ```csharp
 namespace OpenApiFunctionApp.Models;
@@ -37,7 +37,7 @@ public class ItemToAdd
 }
 ```
 
-2つ目は、`Item` という名前で class を追加します。コードは以下にします。
+2つ目は、`Item` という名前で class を追加します。コード全体を以下に書き換えます。
 
 ```csharp
 namespace OpenApiFunctionApp.Models;
@@ -166,7 +166,8 @@ Route の定義とその値の取得は、`HttpTrigger` attribute の `Route` �
 
 `category` を検索する API を作ってみましょう。
 
-TODO: 作成例のコードサンプルは[こちら](????????????)
+TODO: サンプルコードのリンクを更新
+作成例のコードサンプルは[こちら](????????????)
 
 <br>
 
