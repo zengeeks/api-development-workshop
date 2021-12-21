@@ -15,16 +15,24 @@ namespace ItemApi;
 
 public class ItemOperations
 {
-    private static readonly List<Item> Items;
+    private static readonly List<Item> Items = Enumerable.Range(0, 5)
+                                                        .Select(x => new Item
+                                                        {
+                                                            Id = x.ToString(), 
+                                                            Name = $"Item {x}", 
+                                                            Description = $"Description {x}", 
+                                                            Category = x % 2 == 0 ? "hat" : "bag"
+                                                        })
+                                                        .ToList();
 
     private readonly ILogger<ItemOperations> _logger;
 
-    static ItemOperations()
-    {
-        Items = Enumerable.Range(0, 5)
-                          .Select(x => new Item { Id = x.ToString(), Name = $"Item {x}", Description = $"Description {x}", Category = x % 2 == 0 ? "hat" : "bag" })
-                          .ToList();
-    }
+    //static ItemOperations()
+    //{
+    //    Items = Enumerable.Range(0, 5)
+    //                      .Select(x => new Item { Id = x.ToString(), Name = $"Item {x}", Description = $"Description {x}", Category = x % 2 == 0 ? "hat" : "bag" })
+    //                      .ToList();
+    //}
 
     public ItemOperations(ILogger<ItemOperations> log)
     {
@@ -60,6 +68,7 @@ public class ItemOperations
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(Item), Description = "追加した Item")]
     public IActionResult AddItem([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "items")] ItemToAdd itemToAdd)
     {
+        // 入力チェック
         if (string.IsNullOrEmpty(itemToAdd.Name) || string.IsNullOrEmpty(itemToAdd.Description))
         {
             return new BadRequestObjectResult("name と description を指定してください。");
@@ -67,8 +76,10 @@ public class ItemOperations
 
         var item = new Item
         {
+            // ID を登録
             Id = Guid.NewGuid().ToString(),
             Name = itemToAdd.Name,
+            Category = itemToAdd.Category,
             Description = itemToAdd.Description
         };
         Items.Add(item);
@@ -86,6 +97,13 @@ public class ItemOperations
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(Item), Description = "更新した Item")]
     public IActionResult UpdateItem([HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "items/{id}")] Item itemToUpdate, string id)
     {
+        // 入力チェック
+        if (string.IsNullOrEmpty(itemToUpdate.Name) || string.IsNullOrEmpty(itemToUpdate.Category) || string.IsNullOrEmpty(itemToUpdate.Description))
+        {
+            return new BadRequestObjectResult("name, category, description の入力は必須です。");
+        }
+
+        // item の存在チェック
         var item = Items.FirstOrDefault(x => x.Id == id);
         if (item == null)
         {
@@ -93,6 +111,7 @@ public class ItemOperations
         }
 
         item.Name = itemToUpdate.Name;
+        item.Category = itemToUpdate.Category;
         item.Description = itemToUpdate.Description;
 
         return new OkObjectResult(item);
@@ -102,7 +121,7 @@ public class ItemOperations
     [OpenApiOperation(operationId: "DeleteItem", tags: new[] { "Item operations" }, Summary = "Item を削除", Description = "item を削除します。")]
     [OpenApiParameter(name: "id", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "削除するアイテムの id")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NoContent, contentType: "application/json", bodyType: typeof(string), Description = "The No content response")]
-    public IActionResult DeleteItem([HttpTrigger(AuthorizationLevel.Function, "delete", Route = "items/{id}")] HttpRequest req, string id)
+    public IActionResult DeleteItem([HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "items/{id}")] HttpRequest req, string id)
     {
         var item = Items.FirstOrDefault(x => x.Id == id);
         if (item == null)

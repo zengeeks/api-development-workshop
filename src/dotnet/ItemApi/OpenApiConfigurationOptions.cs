@@ -1,8 +1,7 @@
-﻿using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Configurations;
+﻿using System;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Configurations;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
 
 namespace ItemApi;
 
@@ -15,8 +14,8 @@ public class OpenApiConfigurationOptions : DefaultOpenApiConfigurationOptions
         Description = "Powered by ZEN ARCHITECTS.",
         License = new OpenApiLicense()
         {
-            Name = "Workshop Repository",
-            Url = new Uri("https://github.com/zengeeks/api-development-workshop"),
+            Name = "MIT",
+            Url = new Uri("http://opensource.org/licenses/MIT"),
         }
     };
 
