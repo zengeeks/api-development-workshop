@@ -17,10 +17,10 @@ HTTP request method の **POST** は、主にリソースの追加時に使い�
 API の主な仕様は以下とします。
 
 - HTTP request method の `POST`
-- パスは`api/items` とする。
+- パスは `api/items` とする。
 - request の body でデータを受け取る。JSON フォーマットで `name`, `category`, `description` とする。
-- `name`, `category`, `description` は全ての入力。条件に満たない場合は HTTP status code 400 を返す
-- 任意の Id をこの API 内でセットし、登録をする (変数 `Items` に追加する) 。
+- `name`, `category`, `description` は全ての入力必須。条件に満たない場合は HTTP status code 400 を返す
+- 任意の Id をこの API 内でセットし、登録をする。
 - 登録した Item を response の body にセットして返す。HTTP Status code は 201。
 
 コードは以下となります。
@@ -71,9 +71,9 @@ HTTP request method の **PUT** は、主にリソースの追加時に使いま
 API の主な仕様は以下とします。
 
 - HTTP request method の `PUT`
-- パスは`api/items/{id}` とする。
+- パスは `api/items/{id}` とする。
 - request の body で変更するデータを受け取る。JSON フォーマットで `name`, `category`, `description` とする。
-- `name`, `category`, `description` は全ての入力。条件に満たない場合は HTTP status code 400 を返す。
+- `name`, `category`, `description` は全ての入力必須。条件に満たない場合は HTTP status code 400 を返す。
 - パスで指定された `id` の Item が存在しない場合は HTTP status code 404 を返す。
 - 更新した Item を response の body にセットして返す。HTTP Status code は 200。
 
@@ -124,7 +124,7 @@ HTTP request method の **DELETE** は、主にリソースの削除時に使い
 API の主な仕様は以下とします。
 
 - HTTP request method の `DELETE`
-- パスは`api/items/{id}` とする。
+- パスは `api/items/{id}` とする。
 - パスで指定された `id` の Item が存在しない場合は HTTP status code 404 を返す。
 - response の body は空で返す。HTTP Status code は 204。
 

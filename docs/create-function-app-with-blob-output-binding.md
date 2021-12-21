@@ -66,7 +66,7 @@ Azure ポータル `https://portal.azure.com` を開き、先ほど作成した�
 
 ## ステップ 2. CSV ファイルを保存する API
 
-ここでは、HTTP request の body に含まれている CSV の文字列を、CSV ファイルとして Blob へ保存する API を作成します。（画像やファイルを受け取って Blob へ保存する API は次に作成します。
+HTTP request の body に含まれている CSV の文字列を、CSV ファイルとして Blob へ保存する API を作成します。（画像やファイルを受け取って Blob へ保存する API はステップ 3 で作成します。
 
 ### NuGet パッケージのインストール
 
@@ -97,9 +97,7 @@ Visual Studio の上部にある検索で「nuget」と入力し、**NuGet パ�
 
 ![2-4](./images/create-function-app-with-blob-output-binding_2-4.png)
 
-BlobOperations.cs でのコードは以下です。
-
-Azure Functions の中でも特徴的な機能のひとつである バインディングの機能を利用することで、メソッド内で blob へ保存処理は 1 行のみです。
+BlobOperations.cs でのコードは以下です。Azure Functions の中でも特徴的な機能のひとつである バインディングの機能を利用することで、メソッド内で blob へ保存処理は 1 行のみです。
 
 > 📢 コードの詳細の解説は、ワークショップにて行います。
 
@@ -161,7 +159,7 @@ local.settings.json を開き、以下のように `BlobConnectionString` を追
 }
 ```
 
-`BlobConnectionString` にセットする値は Azure ポータルから取得します。ストレージアカウントのリソースを開き、左側のメニューで **アクセスキー** をクリックし、上部の **キーの表示** をクリックして接続文字列をコピーします。
+`BlobConnectionString` にセットする値を取得するために、ブラウザーで Azure ポータルからストレージアカウントを開きます。左側のメニューで **アクセスキー** をクリックし、上部の **キーの表示** をクリックして接続文字列をコピーします。
 
 Visual Studio に戻り、local.settings.json の`BlobConnectionString` にセットします。これで、ローカルデバッグ時でも、Azure 上の Blob にファイルが保存されます。
 
@@ -171,7 +169,7 @@ Visual Studio に戻り、local.settings.json の`BlobConnectionString` にセ�
 
 ### ローカルデバッグで CSV をアップロードしてみる
 
-デバッグ実行して、Swagger UI ( `localhost:7071/api/swagger/ui` ) を確認してみましょう。今作成した API が追加されていますので、実行して動作確認をします。
+デバッグ実行して、Swagger UI ( `localhost:7071/api/swagger/ui` ) を確認してみましょう。今作成した API が追加されていますので、実行してみましょう。 **Request body** には適当な CSV のデータを入力します。
 
 ![2-6](./images/create-function-app-with-blob-output-binding_2-6.png)
 
@@ -183,22 +181,22 @@ Visual Studio に戻り、local.settings.json の`BlobConnectionString` にセ�
 
 ![2-8](./images/create-function-app-with-blob-output-binding_2-8.png)
 
-**編集** をクリックすることで、ファイルの中を確認することができます。
+**編集** をクリックして、アップロードされたファイルの中を確認することができます。
 
 ![2-9](./images/create-function-app-with-blob-output-binding_2-9.png)
 
 
 ## ステップ3. 画像を保存する API の作成
 
-ここでは、HTTP request に含まれる画像データを Blob へ保存する API を作成します。画像ではなく、CSV ファイルといったデータでも同様に保存ができます。
+HTTP request に含まれている画像データを Blob へ保存する API を作成します。画像ではなく、CSV ファイルといったデータでも同様に保存ができます。
 
 先ほど同様に Blob の出力バインディングを使った実装を行います。
 
-ここ方法はスマートではないため、今後よりよい方法に変わる可能性がある点にご注意ください。
+※ ここで紹介する方法は、今後よりよい方法に変わる可能性がある点にご注意ください。
 
 ### API の追加
 
-まず、`Models` フォルダーの直下に以下の class を追加します。
+まず、`Models` フォルダーの直下に `MultiPartFormDataMode` class を追加し、コード全体は以下にします。
 
 ```csharp
 namespace OpenApiFunctionApp.Models;
@@ -219,7 +217,7 @@ public class MultiPartFormDataModel
     [OpenApiParameter(name: "name", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "保存するファイル名 (拡張子無し)")]
     [OpenApiParameter(name: "extension", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "ファイルの拡張子")]
     [OpenApiRequestBody(contentType: "multipart/form-data", bodyType: typeof(MultiPartFormDataModel), Description = "アップロードする画像", Required = true)]
-    [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
+    [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "text/plain", bodyType: typeof(string), Description = "保存したファイル名")]
     public async Task<IActionResult> SaveImageToBlobAsync(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "images/{name}/{extension}")] HttpRequest req,
         string name, string extension,
@@ -237,7 +235,7 @@ public class MultiPartFormDataModel
 
 ### ローカルデバッグで CSV を画像をアップロードしてみる
 
-デバッグ実行して、Swagger UI ( `localhost:7071/api/swagger/ui` ) を確認してみましょう。今作成した API が追加されています。画像やファイルをアップロードして動作確認をします。
+デバッグ実行して、Swagger UI ( `localhost:7071/api/swagger/ui` ) を確認してみましょう。今作成した API が追加されています。Request body で画像やファイルをアップロードできるようになっていますので、動作確認をしてみましょう。
 
 ![2-10](./images/create-function-app-with-blob-output-binding_2-10.png)
 
@@ -252,12 +250,14 @@ public class MultiPartFormDataModel
 
 ![2-12](./images/create-function-app-with-blob-output-binding_2-12.png)
 
-**編集** をクリックすることで、ファイルの中を確認することができます。
+**編集** をクリックして、ファイルの中を確認することができます。
 
 ![2-13](./images/create-function-app-with-blob-output-binding_2-13.png)
 
 
 - 参考ドキュメント: [azure-functions-openapi-extension の開発者本人のブログ記事](https://devkimchi.com/2021/10/27/transmitting-binary-data-via-openapi-on-azure-functions/)
+
+<br>
 
 ## ステップ 3. Azure へデプロイして動作確認
 
@@ -267,14 +267,14 @@ Azure へデプロイして動作を確認してみましょう。
 
 保存先の Blob の接続文字列は、Function App にも設定する必要があります。
 
-Azure ポータルで Function App のリソースを開きましょう。左側のメニューで **構成** をクリックし、**+ 新しいアプリケーション設定** をクリックします。
+Azure ポータルで Function App のリソースを開きましょう。左側のメニューで **構成** をクリックし、**新しいアプリケーション設定** をクリックします。
 
 ![3-1](./images/create-function-app-with-blob-output-binding_3-1.png)
 
 以下を参考に入力し、**OK**ボタンをクリックします。
 
 - **名前**:`BlobConnectionString`
-- **値**: 保存する Blob の接続文字列 (local.settings.json にもセットした値)
+- **値**: 保存先の Blob の接続文字列 (local.settings.json にもセットした値)
 
 ![3-2](./images/create-function-app-with-blob-output-binding_3-2.png)
 
@@ -308,9 +308,9 @@ Function App の Swagge UI の URL が不明な場合は、 以下を参考に�
 > URL の後ろに `api/swagger/ui` と入力して画面を表示すると、先ほど作成した Swagger UI が確認できます。
 
 
-## まとめ
+## 🎉 Congratulations 🎉
 
-ここでは以下を学びました。
+ここでは以下を習得しました。
 
 - ✅ Azure Storage Account の作成
   - Azure ポータルからの Storage Account の作成方法
@@ -319,9 +319,7 @@ Function App の Swagge UI の URL が不明な場合は、 以下を参考に�
 - ✅ Azure 上での動作確認
   - Blob の確認方法
 
-
-
-ワークショップの最後に、今回のワークショップで作成した Azure のリソースを一括削除する方法をご紹介します。
+最後に、今回のワークショップで作成した Azure のリソースを一括削除する方法をご紹介します。
 
 <br>
 
