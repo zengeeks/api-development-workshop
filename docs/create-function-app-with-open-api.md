@@ -1,4 +1,4 @@
-# Open API が有効な Azure Functions の開発
+# Open API を適用した Azure Functions の開発
 
 ここでは Azure Functions で Open API 定義のドキュメントを生成する方法を学びます。
 
@@ -130,9 +130,9 @@ public class OpenApiConfigurationOptions : DefaultOpenApiConfigurationOptions
 
 <br>
 
-## まとめ
+## 🎉 Congratulations 🎉
 
-ここでは以下のことを学びました。
+ここでは以下のことを習得しました。
 
 - ✅ Open API エンドポイントが有効な Azure Functions の作成
   - Visual Studio で Http trigger with Open API の Function App の作成方法
@@ -144,7 +144,7 @@ public class OpenApiConfigurationOptions : DefaultOpenApiConfigurationOptions
 
 <br>
 
-[**次へ: 実戦的な GET メソッドの作成**](./create-get-methods.md)
+[**次へ: 実践的な GET メソッドの作成**](./create-get-methods.md)
 
 ----
 

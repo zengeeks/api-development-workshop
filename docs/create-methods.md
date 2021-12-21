@@ -1,4 +1,4 @@
-# 実戦的な POST / PUT / DELETE メソッドの作成
+# 実践的な POST / PUT / DELETE メソッドの作成
 
 ここでは以下の API を作成しながら`HttpTrigger` attribute の使い方や Open API の定義のパターンを学びます。
 
@@ -158,9 +158,9 @@ API の主な仕様は以下とします。
 
 <br>
 
-## まとめ
+## 🎉 Congratulations 🎉
 
-ここでは、以下の API を作成を通して、`HttpTrigger` attribute の使い方や Open API の定義のパターンを学びました。
+ここでは、以下の API を作成を通して、`HttpTrigger` attribute の使い方や Open API の定義のパターンを習得しました。
 
 - ✅ POST の API 作成 - Item の新規追加
 - ✅ PUT の API 作成 - Item の更新

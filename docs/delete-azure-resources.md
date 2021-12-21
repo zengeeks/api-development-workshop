@@ -4,9 +4,20 @@
 
 リソースを個別に削除することも可能ですが、リソースグループを削除することでその中のリソースを一括で削除することが可能です。
 
-TODO: 
+Azure ポータル `https://portal.azure.com` で、今回のワークショップで作成したリソースグループ `rg-apiworkshop` を開き、上部にある **リソースグループの削除** をクリックします。
 
+![1-1](./images/delete-azure-resources_1-1.png)
 
+<br>
 
-Azure ポータル `https://portal.azure.com` を開き、リソースグループ `rg-apiworkshop` を開きます。
+確認のブレードが表示されます。リソースグループ名を入力して **削除** ボタンをクリックします。
 
+![1-2](./images/delete-azure-resources_1-2.png)
+
+これでリソースグループ内のリソースが一括削除されます。
+
+🎉🎉 ワークショップお疲れ様でした。 🎉🎉
+
+---
+
+[目次へ戻る](./selfpaced-handson.md)

@@ -138,9 +138,9 @@ Function App の CORS の設定は、Azure ポータルで Function App のリ�
 
 <br>
 
-## まとめ
+## 🎉 Congratulations 🎉
 
-ここでは、以下の内容を学びました。
+ここでは、以下の内容を習得しました。
 
 - ✅ Azure ポータルで Azure Functions のリソース作成
 - ✅ Visual Studio から Azure へデプロイ
@@ -150,7 +150,7 @@ Function App の CORS の設定は、Azure ポータルで Function App のリ�
 
 <br>
 
-[**次へ: Azure Storage へファイルを保存する API の作成**](./create-function-with-blob-output-binding.md)
+[**次へ: Azure Storage へファイルを保存する API の作成**](./create-function-app-with-blob-output-binding.md)
 
 ----
 
