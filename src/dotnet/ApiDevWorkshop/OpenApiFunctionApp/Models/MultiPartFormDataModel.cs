@@ -1,4 +1,4 @@
-﻿namespace ItemApi.Models;
+﻿namespace OpenApiFunctionApp.Models;
 
 public class MultiPartFormDataModel
 {

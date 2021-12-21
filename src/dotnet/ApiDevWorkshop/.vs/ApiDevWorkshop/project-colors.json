@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ff9f2fc9-7c3e-4abe-942a-3f160c79ef98": {
+      "ProjectGuid": "ff9f2fc9-7c3e-4abe-942a-3f160c79ef98",
+      "DisplayName": "FirstFunctionApp",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "その他のファイル",
+      "ColorIndex": -1
+    },
+    "5742bd58-cb6c-4ad2-961d-9561518a99b0": {
+      "ProjectGuid": "5742bd58-cb6c-4ad2-961d-9561518a99b0",
+      "DisplayName": "OpenApiFunctionApp",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
