@@ -310,7 +310,7 @@ Function App の Swagge UI の URL が不明な場合は、 以下を参考に�
 >
 > ![3-3](./images/deploy-to-azure_3-3.png)
 >
-> URL の後ろに `api/swagger/ui` と入力して画面を表示すると、先ほど作成した Swagger UI が確認できます。
+> URL の後ろに `/api/swagger/ui` と入力して画面を表示すると、先ほど作成した Swagger UI が確認できます。
 
 
 ## 🎉 Congratulations 🎉
