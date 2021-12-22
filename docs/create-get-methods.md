@@ -166,8 +166,7 @@ Route の定義とその値の取得は、`HttpTrigger` attribute の `Route` �
 
 `category` を検索する API を作ってみましょう。
 
-TODO: サンプルコードのリンクを更新
-作成例のコードサンプルは[こちら](????????????)
+作成例のコードサンプルは[こちら](https://github.com/zengeeks/api-development-workshop/blob/main/src/dotnet/ApiDevWorkshop/OpenApiFunctionApp/ItemOperations.cs#L129-L147)
 
 <br>
 
