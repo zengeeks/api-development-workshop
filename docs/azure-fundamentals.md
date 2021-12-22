@@ -2,6 +2,8 @@
 
 ここでは、Azure を初めて利用する方向けの情報を掲載します。
 
+#### 目次
+
 - [ドキュメントリンク集: API の構成に利用できる Azure サービス](#ドキュメントリンク集-api-の構成に利用できる-azure-サービス)
 - [学習コンテンツ: Microsoft Learn](#学習コンテンツ-microsoft-learn)
 - [参考: マイクロソフトの公式サイトまとめ情報](#参考-マイクロソフトの公式サイトまとめ情報)
@@ -10,14 +12,16 @@
 
 ### Azure Functions
 
-TODO: 一言コメント添える
+Azure Functions はイベント駆動でコードを実行する機構のサービスで、 FaaS (Funtion as a Service) に分類されます。
+
+HTTP ベースの API を作成するには、「HTTP トリガー」を利用します。
 
 - [Azure Functions サーバーレス コンピューティング | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/functions/)
 - [Azure Functions の概要 | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-overview)
 
 ### Azure App Service
 
-TODO: 一言コメント添える
+Azure App Service は Web アプリケーションや REST API をホストできる HTTP ベースのサービスで、 PaaS (Platform as a Service) に分類されます。
 
 - [App Service - Web アプリの構築とホスト | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/app-service/)
 - [概要 - Azure App Service | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/app-service/overview)
@@ -26,12 +30,17 @@ TODO: 一言コメント添える
 
 Azure Logic Apps は、ローコードでさまざまなサービスを連結したり、処理を行うことができるサービスです。
 
+Logic Apps に組み込まれている「Request トリガー」と「Response アクション」を用いて、API を作成することができます。
+
 - [Logic App Service – IPaaS | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/logic-apps/)
 - [Azure Logic Apps の概要 - Azure Logic Apps | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/logic-apps/logic-apps-overview)
 
 ### Azure API Management
 
-TODO: 一言コメントとリンクを添える
+Azure API Management は、既存のバックエンドのサービスに対して API ゲートウェイを作成することができます。
+
+- [API Management – API の管理 | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/api-management/#overview)
+- [Azure API Management の概要と主な概念 | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/api-management/api-management-key-concepts)
 
 ## 学習コンテンツ: Microsoft Learn
 
@@ -85,5 +94,3 @@ Azure Storage Account には、 Blob storage の他に、ファイル共有、Qu
 Microsoft の社員の方がまとめられた学習者向けのプレゼンテーションについて、とても参考になるので共有します。
 
 - [冬休みにAzureを学習したい方へ！おすすめマイクロソフト公式サイトまとめ情報](https://www.slideshare.net/RieMoriguchi/azure-250856110)
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/8Rydh6MbCB15k" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/RieMoriguchi/azure-250856110" title="冬休みにAzureを学習したい方へ！おすすめマイクロソフト公式サイトまとめ情報" target="_blank">冬休みにAzureを学習したい方へ！おすすめマイクロソフト公式サイトまとめ情報</a> </strong> from <strong><a href="https://www.slideshare.net/RieMoriguchi" target="_blank">Rie Moriguchi</a></strong> </div>
