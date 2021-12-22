@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstFunctionApp", "FirstFunctionApp\FirstFunctionApp.csproj", "{FF9F2FC9-7C3E-4ABE-942A-3F160C79EF98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiFunctionApp", "OpenApiFunctionApp\OpenApiFunctionApp.csproj", "{5742BD58-CB6C-4AD2-961D-9561518A99B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiFunctionApp", "OpenApiFunctionApp\OpenApiFunctionApp.csproj", "{5742BD58-CB6C-4AD2-961D-9561518A99B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestClientConsoleSample", "RestClientConsoleSample\RestClientConsoleSample.csproj", "{50498059-490A-4CBF-828D-BA6949C5445F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5742BD58-CB6C-4AD2-961D-9561518A99B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5742BD58-CB6C-4AD2-961D-9561518A99B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5742BD58-CB6C-4AD2-961D-9561518A99B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50498059-490A-4CBF-828D-BA6949C5445F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50498059-490A-4CBF-828D-BA6949C5445F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50498059-490A-4CBF-828D-BA6949C5445F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50498059-490A-4CBF-828D-BA6949C5445F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
