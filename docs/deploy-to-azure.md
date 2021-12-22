@@ -119,7 +119,7 @@ API Management の設定画面ですが今回は利用しないため、**この
 
 ![3-3](./images/deploy-to-azure_3-3.png)
 
-URL の後ろに `api/swagger/ui` と入力して画面を表示すると、先ほど作成した Swagger UI が確認できます。ここから API をコールすることで、デプロイされた Function App の動作を確認することができます。
+URL の後ろに `/api/swagger/ui` と入力して画面を表示すると、先ほど作成した Swagger UI が確認できます。ここから API をコールすることで、デプロイされた Function App の動作を確認することができます。
 
 ![3-4](./images/deploy-to-azure_3-4.png)
 
