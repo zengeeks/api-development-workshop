@@ -15,10 +15,11 @@
 
 今回のワークショップではデータストアとの連携は行いませんので、データを内部で保持してメソッドに応じたデータを返せるようにします。
 
-### POCO の作成
+### [POCO](https://ja.wikipedia.org/wiki/Plain_Old_CLR_Object) の作成
 
-まずデータの POCO となる class を追加していきます。Visual Studio のソリューションエクスプローラーでプロジェクト名を右クリック → **追加** → **新しいフォルダー** をクリックします。フォルダー名は「Models」で登録します。
+送受信する際のデータのスキーマとなる class を作成します。具体的には、前半のワークショップで API を呼んだ時に取得した `Item` のスキーマとなる class です。
 
+Visual Studio のソリューションエクスプローラーでプロジェクト名を右クリック → **追加** → **新しいフォルダー** をクリックします。フォルダー名は「Models」で登録します。
 
 ![1-1](./images/create-get-methods_1-1.png)
 
@@ -72,8 +73,9 @@ public class IemOperations
 
 ### データの初期化
 
-Function App 起動時に static な変数として初期化します。**IemOperations.cs** で、class の変数として以下のように定義します。必要に応じて `using` ステートメントは追加してください。
+この API で取得可能な初期データを `List<Item> Items` として定義し、5つのデータがある状態に初期化します。
 
+**IemOperations.cs** を開き、以下のように変数 `Items` を追加しましょう。必要に応じて `using` ステートメントは追加してください。
 
 ```csharp
 namespace OpenApiFunctionApp;
@@ -106,7 +108,7 @@ ItemOperations.cs にコードを書いて API を開発していきます。
 
 ここでは、HTTP のメソッド (GET, POST など) を指定する方法を学びながら API を開発していきましょう。
 
-既存の `Run` メソッドは削除し、以下のコードを追加します。以下コードのように`HttpTrigger` attribute の `methods` 引数を `get` のみを指定することで、GET のみでアクセスできる API になります。
+既存の `Run` メソッドは削除し、以下の `GetItems` メソッドを追加します。このメソッドにある `HttpTrigger` attribute の `methods` 引数を `get` のみを指定することで、GET のみでアクセスできる API になります。
 
 ポイントは、指定した動詞のみアクセスできるようになることです。
 
@@ -131,9 +133,10 @@ ItemOperations.cs にコードを書いて API を開発していきます。
 Route の定義とその値の取得は、`HttpTrigger` attribute の `Route` を定義することで取得できます。  
 以下コードのように `Route = "items/{id}"` と定義し、さらにメソッドの引数で `id` を定義することで、メソッド内で Route で取得した値を利用することが可能です。
 
+先ほど作成した `GetItems` の下に、以下の`GetItem` メソッドを追加しましょう。必要に応じて `using` ステートメントは追加してください。
+
 > 📢 コードの詳細な解説は、ワークショップにて行います。
 
-このコードを `IemOperations` class に追加しましょう。必要に応じて `using` ステートメントは追加してください。
 
 ```csharp
     [FunctionName(nameof(GetItem))]

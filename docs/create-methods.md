@@ -23,7 +23,7 @@ API の主な仕様は以下とします。
 - 任意の Id をこの API 内でセットし、登録をする。
 - 登録した Item を response の body にセットして返す。HTTP Status code は 201。
 
-コードは以下となります。
+コードは以下になります。`ItemOperations` class の任意の場所に、この `AddItem` メソッドを追加しましょう。
 
 > 📢 コードの詳細な解説は、ワークショップにて行います。
 
@@ -77,7 +77,7 @@ API の主な仕様は以下とします。
 - パスで指定された `id` の Item が存在しない場合は HTTP status code 404 を返す。
 - 更新した Item を response の body にセットして返す。HTTP Status code は 200。
 
-コードは以下となります。
+コードは以下となります。`ItemOperations` class の任意の場所に、この `UpdateItem` メソッドを追加しましょう。
 
 > 📢 コードの詳細な解説は、ワークショップにて行います。
 
@@ -128,7 +128,7 @@ API の主な仕様は以下とします。
 - パスで指定された `id` の Item が存在しない場合は HTTP status code 404 を返す。
 - response の body は空で返す。HTTP Status code は 204。
 
-コードは以下となります。
+コードは以下となります。`ItemOperations` class の任意の場所に、この `DeleteItem` メソッドを追加しましょう。
 
 > 📢 コードの詳細な解説は、ワークショップにて行います。
 
