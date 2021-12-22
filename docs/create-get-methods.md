@@ -81,6 +81,7 @@ namespace OpenApiFunctionApp;
 public class IemOperations
 {
     private readonly ILogger<IemOperations> _logger;
+    // ↓↓ ここから ↓↓
     private static readonly List<Item> Items = Enumerable.Range(0, 5)
                                                 .Select(x => new Item
                                                 {
@@ -90,6 +91,7 @@ public class IemOperations
                                                     Category = x % 2 == 0 ? "hat" : "bag"
                                                 })
                                                 .ToList();
+    // ↑↑ ここまで追加 ↑↑
 ```
 
 これで準備は完了です。次は全データを取得する API と ID を指定して取得する API を開発してきます。
