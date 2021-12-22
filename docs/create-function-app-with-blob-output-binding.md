@@ -62,6 +62,8 @@ Azure ポータル `https://portal.azure.com` を開き、先ほど作成した�
 
 ![1-8](./images/create-function-app-with-blob-output-binding_1-8.png)
 
+- 参考ドキュメント: [Azure Blob Storage とは](https://docs.microsoft.com/ja-jp/azure/storage/blobs/storage-blobs-overview)
+
 <br>
 
 ## ステップ 2. CSV ファイルを保存する API
@@ -185,6 +187,9 @@ Visual Studio に戻り、local.settings.json の`BlobConnectionString` にセ�
 
 ![2-9](./images/create-function-app-with-blob-output-binding_2-9.png)
 
+- 参考ドキュメント: [Azure Functions における Azure Blob Storage の出力バインド | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-bindings-storage-blob-output?tabs=csharp)
+
+<br>
 
 ## ステップ3. 画像を保存する API の作成
 
