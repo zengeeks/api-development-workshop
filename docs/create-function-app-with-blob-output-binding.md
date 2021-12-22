@@ -99,7 +99,7 @@ Visual Studio の上部にある検索で「nuget」と入力し、**NuGet パ�
 
 ![2-4](./images/create-function-app-with-blob-output-binding_2-4.png)
 
-BlobOperations.cs でのコードは以下です。Azure Functions の中でも特徴的な機能のひとつである バインディングの機能を利用することで、メソッド内で blob へ保存処理は 1 行のみです。
+BlobOperations.cs のコード全体を、以下のコードに書き換えましょう。Azure Functions の中でも特徴的な機能のひとつである バインディングの機能を利用することで、メソッド内で blob へ保存処理は 1 行のみです。
 
 > 📢 コードの詳細の解説は、ワークショップにて行います。
 
@@ -212,7 +212,7 @@ public class MultiPartFormDataModel
 }
 ```
 
-次に BlobOperations.cs で以下のメソッドを追加します。`using` ステートメントは必要に応じて追加してください。
+次に BlobOperations.cs で以下の `SaveImageToBlobAsync` メソッドを追加します。`using` ステートメントは必要に応じて追加してください。
 
 > 📢 コードの詳細の解説は、ワークショップにて行います。
 
