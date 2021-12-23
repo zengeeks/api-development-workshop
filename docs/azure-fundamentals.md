@@ -39,7 +39,7 @@ Logic Apps に組み込まれている「Request トリガー」と「Response �
 
 Azure API Management は、既存のバックエンドのサービスに対して API ゲートウェイを作成することができます。
 
-- [API Management – API の管理 | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/api-management/#overview)
+- [API Management – API の管理 | Microsoft Azure](https://azure.microsoft.com/ja-jp/services/api-management/)
 - [Azure API Management の概要と主な概念 | Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/api-management/api-management-key-concepts)
 
 ## 学習コンテンツ: Microsoft Learn
