@@ -10,7 +10,7 @@
 
 OpenAPI について、おさらいしましょう。
 
-OpenAPI Specificaton (OAS) は、[OpenAPI Initiative](https://www.openapis.org/) が策定している、HTTPプロトコルにおける API の定義を統一するための仕様です。
+OpenAPI Specification (OAS) は、[OpenAPI Initiative](https://www.openapis.org/) が策定している、HTTPプロトコルにおける API の定義を統一するための仕様です。
 
 いくつかバージョンがあり、現在は `3.x` バージョンが主流です。
 
