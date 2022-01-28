@@ -56,12 +56,12 @@ _Representational State Transfer (REST)_ は、Web における API を実装す
 
 > CRUD（クラッド）とは、ほとんど全てのコンピュータソフトウェアが持つ永続性[1]の4つの基本機能のイニシャルを並べた用語。
 
-| 項目 | 操作 |
-|----|---|
-| Create | 生成 |
-| Read | 読み取り |
-| Update | 更新 |
-| Delete | 削除 |
+| 項目 | 操作 | 対応する HTTP メソッド |
+|----|----|----|
+| Create | 生成 | `POST` |
+| Read | 読み取り | `GET` |
+| Update | 更新 | `PUT` |
+| Delete | 削除 | `DELETE` |
 
 API ではこの CRUD に沿って操作を作成することも多いです。
 
