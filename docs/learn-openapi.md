@@ -167,7 +167,7 @@ components:
       in: header
     BearerAuth:
       type: http
-      schema: bearer
+      scheme: bearer
 
 security: 
   - ApiKeyAuth: []
