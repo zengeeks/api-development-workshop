@@ -1,4 +1,4 @@
-# Azure Storage へファイルを保存する API の作成
+# (オプション) Azure Storage へファイルを保存する API の作成
 
 ここでは、Http trigger の Function App で、Azure Storage の blob へファイルを保存する API を開発します。Blob への保存処理は、出力バインドの機能を使うことでコードを最小限に抑えて実装します。
 
